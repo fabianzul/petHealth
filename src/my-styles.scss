@@ -1,0 +1,44 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Define a custom palette
+$custom-primary: (
+  50: #870DF0,
+  100: #870DF0,
+  200: #870DF0,
+  300: #870DF0,
+  400: #870DF0,
+  500: #870DF0,
+  600: #870DF0,
+  700: #870DF0,
+  800: #870DF0,
+  900: #870DF0,
+  A100: #870DF0,
+  A200: #870DF0,
+  A400: #870DF0,
+  A700: #870DF0,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $white-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$my-styles-primary: mat-palette($custom-primary);
+$my-styles-accent:  mat-palette($custom-primary);
+$my-styles-warn:    mat-palette($mat-red);
+$my-styles-theme:   mat-dark-theme($my-styles-primary, $my-styles-accent, $my-styles-warn);
+
+@include angular-material-theme($my-styles-theme);

@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/*@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";*/
+@import "src/my-styles.scss";
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.green-snackbar {
+    background: #009688;
+}
+
+.red-snackbar {
+    background: #F44336;
+}
+
+.normal-snackbar {
+    
+}
+
+.pot-dialog {
+    .mat-dialog-container {
+		padding: 0;
+     }
+}

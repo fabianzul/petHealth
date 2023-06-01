@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.ppalContainer{
+    //position:fixed !important;
+    position:absolute !important;
+    top:0px;
+    right:0;
+    bottom:0;
+    left:0;
+    background: linear-gradient(to bottom right, #870DF0 , #4819E2);
+    padding: 5%;
+}
+
+.title{
+    font-family: 'Poppins';
+    display: flex;
+}
+
+.title span{
+    font-size: 1.3rem;
+}
+
+.main{
+    display: flex;
+    padding: 8%;
+}
+
+.main .title-main{
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.main .image image {
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,88 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 200px;
+    box-shadow: 3px 0 6px rgba(0,0,0,.24);
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    height: 50px;
+  }
+  
+  .hidden{
+    display: none;
+  }
+  
+  .static{
+    height: 64px;
+  }
+  
+  .spacer{
+    flex: 1 1 auto;
+  }
+  
+  i.material-icons {
+    font-size: 16px;
+    vertical-align: middle;
+    position: relative;
+    margin-right: 2px;
+    top: 0px;
+  }
+  
+  i.fas {
+    font-size: 14px;
+    vertical-align: middle;
+    position: relative;
+    margin-right: 2px;
+    top: 0px;
+  }
+  
+  
+  mat-toolbar a {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .docs-angular-logo {
+    height: 35px;
+    width: 150px;
+    vertical-align: middle;
+  }
+  
+
+  .mat-menu-panel.notifications-dropdown { max-width:330px !important; width: 100vw;text-align: center; overflow: visible; }
+
+  .white-icon {
+    color: white;
+}
+/* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
+.white-icon svg {
+    fill: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+

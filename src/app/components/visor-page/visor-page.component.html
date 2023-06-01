@@ -1,0 +1,51 @@
+<div class="grid-container" style="height: 100%;overflow-x:auto;" @moveIn>
+  <div class="docs-primary-header">
+    <h1 class="mat-h1"><i class="material-icons">pets</i> Mascotas</h1>
+  </div>
+
+  <div style="margin-top: 10%;">
+
+    <div *ngIf="isLoading" style="justify-content: center; align-items: center; margin: 0 auto">
+      <mat-progress-spinner diameter="50" color="primary" mode="indeterminate" *ngIf="isLoading" style="margin: 0 auto">
+      </mat-progress-spinner>
+      <br>
+      <div style="text-align: center">
+        <label>Cargando Datos</label>
+        <br>
+        <label> La operación puede tardar unos minutos dependiendo de la velocidad en su conexión a internet.
+        </label>
+        <br>
+        <label>Por favor espere...</label>
+      </div>
+    </div>
+
+    <div class="card-container" *ngIf="!nopet">
+
+      <div class="card" style="cursor: pointer !important;" *ngFor="let pet of this.PetsRealTimeObject;  let i = index">
+        <div class="card-image" style="background-image: url('../../../assets/img/dog.png');"></div>
+        <div class="card-info" style="background: #515ea8;">
+          <div class="card-title">
+            <div style="text-align: start;width: 49%;display: inline-block;vertical-align: middle;"> {{pet.name}} </div>
+            <div style="text-align: end;width: 49%; display: inline-block;vertical-align: middle;">
+              <mat-icon>pets</mat-icon>
+            </div>
+          </div>
+          <div class="card-subtitle">
+            <label>Heart Rate: </label> {{pet.heart}}
+            <br>
+            <label>Temperatura: </label> {{pet.temp}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="nopet">
+      <h2>No se encontraron Mascotas</h2>
+    </div>
+
+  </div>
+
+  <div class="home-button-container" @moveIn>
+    <button mat-fab color="accent" matTooltip="Ir a Dashboard"
+      (click)="route('/dashboard')"><mat-icon>dashboard</mat-icon></button>
+  </div>

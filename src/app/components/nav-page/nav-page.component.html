@@ -1,0 +1,111 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true">
+    <mat-toolbar color="primary" style="text-align: center">
+      
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item (click)="route('/dashboard')" *ngIf="authService.currentUser"><i
+          class="material-icons">dashboard</i>
+        Dashboard</a>
+      <mat-divider></mat-divider>
+        <a mat-list-item (click)="route('/visor')" *ngIf="authService.currentUser"
+        style="padding-left: 10px; width: 190px"><i class="material-icons">pets</i> Mascotas</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-elevation-z10" style="z-index: 10;">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!--<span>Luminventory</span>-->
+      <span class="spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="notifyMenu" #trigger="matMenuTrigger"
+        *ngIf="authService.currentUser">
+        <mat-icon [matBadge]="(this.sensorNotifications?.length>99? '99+':this.sensorNotifications?.length)"
+          matBadgeColor="warn" [matBadgeHidden]="this.sensorNotifications?.length==0">notifications</mat-icon>
+      </button>
+      <mat-menu #notifyMenu="matMenu"  class="notifications-dropdown">
+        <div style="min-width: 300px;max-width: 300; text-align: center;display: inline-block; margin-bottom: 10px"
+          (click)="$event.stopPropagation();">
+          <button mat-button disabled style="margin-left: auto; margin-right: auto">
+            <span style="font-size: 16px; color: white">Notificaciones pendientes</span>
+          </button>
+          <button mat-icon-button align="right" style="position: absolute; right: 0;top:6px;" (click)="closeMenu()">
+            <mat-icon class="white-icon">cancel</mat-icon>
+          </button>
+        </div>
+        <mat-divider></mat-divider>
+        
+        <div (click)="$event.stopPropagation();" style="overflow-y: auto;max-height: 400px; text-align: center; margin-top:1px">
+
+          <div style="min-width: 300px;max-width: 300; text-align: center;display: inline-block;"
+            (click)="$event.stopPropagation();">
+            
+          </div>
+
+          <mat-card *ngIf="isLoading"
+            style="justify-content: center; align-items: center; margin: 0 auto; box-shadow: unset">
+            <mat-progress-spinner diameter="40" color="primary" mode="indeterminate" style="margin: 0 auto">
+            </mat-progress-spinner>
+            <br>
+            <label>Cargando Notificaciones</label>
+            <br>
+            <!--<label> La operación puede tardar unos minutos dependiendo de la velocidad en su conexión a internet. </label>-->
+
+            <label>Por favor espere...</label>
+          </mat-card>
+
+          <div *ngIf="!isLoading">
+            <mat-card
+              [ngStyle]="{'background-color' : (notification.colored ==  'g') ? '#43a047': (notification.colored == 'm')? 'darkgoldenrod':'#f44336'}"
+              *ngFor="let notification of sensorNotifications;"
+              style="min-width: 260px;max-width: 260px;margin-bottom: 5px;margin-top: 5px; margin-left: auto; margin-right: auto">
+              <mat-card-content>
+                <label
+                  style="font-size: 15px">{{ notification.msg | slice:0:45 }}{{ notification.msg.length > 45 ? '...' : ''}}</label>
+                <br>
+              </mat-card-content>
+              <mat-divider style="position:relative"></mat-divider>
+              <mat-card-actions align="end" style="height: 25px;" >
+                <label style="font-size: 12px; position: absolute; left: 10px; bottom: 12.5px">{{notification.date |
+                date: 'yyyy/MM/dd h:mm:ss a'}}</label>
+                <button *ngIf="userToken?.sensor_e || userToken?.admin || userToken?.master" mat-icon-button style="position: absolute; right: 0; bottom: 0"
+                  (click)="notifyRead(this.notification)">
+                  <mat-icon class="white-icon">check_circle</mat-icon>
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+
+          <div style="min-width: 300px;max-width: 300; text-align: center;display: inline-block;"
+            (click)="$event.stopPropagation();">
+          </div>
+        </div>
+        
+        <mat-divider></mat-divider>
+
+        <div style="min-width: 300px;max-width: 300; text-align: center;display: inline-block;"
+          (click)="$event.stopPropagation();">
+          <button mat-stroked-button style=margin-top:10px>
+            <span style="font-size: 16px; color: darkgoldenrod">Marcar todo como leído</span>
+            <span style="font-size: 10px; color: darkgoldenrod; margin-top: -20px; display: block">({{this.quantityNotify}} Notificaciones)</span>
+          </button>
+         
+        </div>
+      </mat-menu>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="authService.currentUser">
+        <mat-icon>person</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>mobile_off</mat-icon>
+          <span>Cerrar Sesión</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+    <ng-content>
+      <!-- Add Content Here -->
+    </ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

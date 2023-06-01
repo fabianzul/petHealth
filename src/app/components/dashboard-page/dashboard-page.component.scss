@@ -1,0 +1,189 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+.grid-container {
+  position: unset !important;
+  overflow: auto;
+  margin: 0px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.docs-primary-header{
+  padding-left:20px;
+}
+.docs-primary-header h1{
+  font-weight:300;
+  margin:0;
+  padding:28px 8px;
+  font-size:20px;
+  color:#fff
+}
+
+.docs-primary-header{
+  background: linear-gradient(to bottom right, #870DF0 , #4819E2); 
+}
+
+.docs-header-headline{
+  color:#fff
+}
+
+i.material-icons {
+  font-size: 18px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+
+
+/*Card*/
+
+.card-container {
+//    margin-top: 80px;
+    align-items: center;
+    /* more style: */
+  position: relative;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding-top: 40px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.card-container2 {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.card {
+  min-width: 275px;
+  width: 275px;
+  position: relative;
+  margin: 15px 15px;
+  height: 210px;
+  border-radius: 7px;
+  background-size: cover;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+  transition: 0.2s all linear;
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  box-sizing: border-box;
+}
+.card .card-info {
+  position: absolute;
+  height: 90px;
+  width: 100%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+  top: 120px;
+}
+
+.card .card-title{
+  color: #fff;
+  font-size: 20px;
+  font-family: "Google Sans",sans-serif;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  text-shadow: 1px 1px rgba(0,0,0,.1);
+  margin-left: 15px;
+}
+
+.card .card-subtitle{
+  color: rgba(255,255,255,.87);
+    font-size: 13px;
+    line-height: 20px;
+    margin-left: 15px;
+}
+
+.card .card-image {
+  width: 100%;
+  height: 120px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 15px 15px 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+.cardnohover { 
+  min-width: 275px;
+  width: 275px;
+  position: relative;
+  margin: 20px 20px;
+  height: 210px;
+  border-radius: 7px;
+  background-size: cover;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+  transition: 0.2s all linear;
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  box-sizing: border-box;
+}
+.cardnohover .card-info {
+  position: absolute;
+  height: 90px;
+  width: 100%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+  top: 120px;
+  filter:brightness(0.3);
+  cursor:not-allowed;
+}
+
+.cardnohover .card-title{
+  color: #fff;
+  font-size: 20px;
+  font-family: "Google Sans",sans-serif;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  text-shadow: 1px 1px rgba(0,0,0,.1);
+  margin-left: 15px;
+}
+
+.cardnohover .card-subtitle{
+  color: rgba(255,255,255,.87);
+    font-size: 13px;
+    line-height: 20px;
+    margin-left: 15px;
+}
+
+.cardnohover .card-image {
+  width: 100%;
+  height: 120px;
+  cursor:not-allowed;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  filter:brightness(0.3);
+}

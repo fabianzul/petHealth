@@ -1,0 +1,52 @@
+<div class="grid-container diagonal-gradient">
+  <!--<div class="docs-primary-header">-->
+  <!--<h1 class="mat-h1">Inicio De Sesión</h1>-->
+  <!--<h2 class="mat-h2">Inicio de sesión con el dominio Lumindtech.</h2>-->
+  <!--</div>-->
+
+  <mat-card class="dashboard-card" >
+    <div style="display: table-cell;
+    vertical-align: middle;text-align: center">
+      <div *ngIf="!authService.currentUser; else alreadyLoggedIn">
+        <mat-icon style="margin: auto; font-size: 36px; text-align: center">assignment_ind</mat-icon>
+        <br>
+        <br>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input matInput #mail placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+              autofocus>
+            <!--<mat-hint>Errors appear instantly!</mat-hint>-->
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Por favor, inserte una dirección de e-mail correcta.
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              E-mail es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #pass placeholder="Contraseña" [formControl]="passFormControl"
+              [type]="hide ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="passFormControl.hasError('required')">
+              Contraseña es <strong>requerida</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <br>
+          <button mat-raised-button #loginButton id="loginButton" color="primary"
+            (click)="signInWithEmail(this.mail,this.pass)" class="google" style="width: 200px">Login
+          </button>
+          <br>
+          <br>
+        </form>
+      </div>
+        <mat-progress-bar mode="indeterminate" color="accent" *ngIf="progress"></mat-progress-bar>
+    </div>
+  </mat-card>
+</div>
+
+<ng-template #alreadyLoggedIn>
+  Ya ha iniciado sesión! puede continuar su trabajo en la sección de 'Dashboard' en el menú desplegable de la parte
+  superior izquierda para gestionar Sensores y/u otro tipo de módulos.
+</ng-template>

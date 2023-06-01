@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.grid-container {
+    margin: 0px;
+  }
+  
+  .more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  
+  .dashboard-card{
+      top:100px;
+      margin: auto;
+      width: 40%;
+      height: 150px;
+      text-align: center;
+      vertical-align: middle;
+      display: table;
+  }
+  
+  .docs-primary-header{
+    padding-left:20px;
+    text-align: center;
+    height: 100px;
+  }
+
+  .docs-primary-header h1{
+    margin:0;
+    padding-top: 20px;
+    color:#fff;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 56px;
+  }
+
+  .docs-primary-header h2{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    margin: 15px 0 25px;
+  }
+  
+  .docs-primary-header{
+    background:#009688
+  }
+  
+  .docs-header-headline{
+    color:#fff
+  }
+
+  .blue-snackbar {
+    background: #2196F3;
+  }
+
+@media (max-width:408px) {
+    .docs-primary-header {
+        height: 300px;
+    }
+    .dashboard-card{
+      width: 80%
+    }
+}
+
+
+.example-form {
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.mat-progress-bar-fill::after {
+  background-color: #c3c991 !important;
+}
+
+.example-margin {
+  height: 10px;
+  width: 10px;
+}
